@@ -4,8 +4,6 @@ import PlayerForm from "./PlayerForm";
 import Leaderboard from "./Leaderboard";
 import song from "../resources/sounds/simpsonsThemeSong.mp3";
 
-//TODO: add to repo, host it somewhere
-
 class Gameboard extends Component {
     constructor(props) {
         super(props);
@@ -15,13 +13,14 @@ class Gameboard extends Component {
         this.matched = [];
         this.clickCount = 0;
         this.player = [];
-        this.leaderboard = <Leaderboard/>;
+        this.topFive = React.createRef();
+        this.leaderboard = <Leaderboard ref={this.topFive}/>;
         this.worst = 100000000000;
     }
 
     generatePlayer(clickCount) {
         this.setState({
-            player: this.player.push(<PlayerForm clicks={clickCount} initials={""}/>)
+            player: this.player.push(<PlayerForm key={clickCount} parent={this} clicks={clickCount} initials={""}/>)
         })
     }
 
@@ -45,12 +44,12 @@ class Gameboard extends Component {
                         document.getElementById('clickCountTotal').innerText = "WINNER!!! Your click count was: " + this.clickCount + "!";
                         let leaderboard = document.getElementById('leaderboard');
                         leaderboard.style.display = "block";
-                        this.worst = (leaderboard.children[0].children[4].textContent.split("****")[0]) * 1;
+                        if(leaderboard.children[0].length > 0 ){
+                            this.worst = (leaderboard.children[0].children[-1].textContent.split("****")[0]) * 1;
+                        }
                         this.generatePlayer(this.clickCount);
-                        // console.log("fifth player" + this.leaderboard);
                         this.sleep(1100, this).then(() => {
                             document.getElementById('status').style.display = "block";
-                            // document.getElementById('playerForm').style.display = "block";
                         });
                     }
                 } else {
@@ -63,6 +62,10 @@ class Gameboard extends Component {
                 }
             }
         }
+    }
+
+    testingRefs() {
+        this.topFive.current.getLeaders();
     }
 
     sleep(ms, currentObject) {
@@ -106,7 +109,7 @@ class Gameboard extends Component {
                 </div>
                 <div id="gameboard">
                     {this.randomizedCharacters.map((character, id) => {
-                        return <Card id={id} parent={this} character={character}/>
+                        return <Card key={id} id={id} parent={this} character={character}/>
                     })}
                 </div>
             </div>

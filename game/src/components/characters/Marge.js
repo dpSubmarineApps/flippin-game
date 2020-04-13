@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 
 class Marge extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div id="marge">
             <div className="head">

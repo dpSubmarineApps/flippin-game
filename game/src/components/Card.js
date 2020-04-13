@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import characters from "./characters/character-index";
 import ReactCardFlip from "react-card-flip";
+// eslint-disable-next-line no-unused-vars
 import cardStyle from "../resources/styles/card.css";
 import digitalLogo from "../resources/images/DigitalLogo.png";
 
@@ -47,6 +48,8 @@ class Card extends Component {
                 return <characters.Ralph/>;
             case "Smithers":
                 return <characters.Smithers/>;
+            default:
+                return <characters.MrBurns/>;
         }
     }
 
@@ -54,7 +57,7 @@ class Card extends Component {
         return (
             <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
                 <div id="clickable" onClick={this.handleClick}>
-                    <img className="digitalLogo" src={digitalLogo}/>
+                    <img className="digitalLogo" src={digitalLogo} alt="digital products logo" />
                 </div>
                 <div index={this.props.index} id="clickable" className="characterFace" onClick={this.handleClick}>
                     {this.findCharacter()}

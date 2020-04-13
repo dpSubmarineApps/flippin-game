@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 
 class Apu extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div id="apu">
             <div className="head">

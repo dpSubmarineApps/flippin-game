@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 
 class Itchy extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div id="itchy">
             <div className="head">

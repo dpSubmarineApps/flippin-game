@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import {record} from "../actions/record";
 
@@ -9,10 +8,19 @@ class PlayerForm extends Component {
         this.clicks = props.clicks;
     }
 
+    sleep(ms, currentObject) {
+        return new Promise(resolve => setTimeout(resolve, ms, currentObject));
+    }
+
     onSubmit = e => {
         e.preventDefault();
+        document.getElementById("playerForm").style.display="none";
         let initials = document.getElementById("inputInitials").value;
         record(this.clicks, initials);
+        let gameboard = this.props.parent;
+        this.sleep(1000, this).then(() => {
+            gameboard.testingRefs();
+        })
     };
 
     render() {

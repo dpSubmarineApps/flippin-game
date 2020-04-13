@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 
 class Homer extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return <div id="homer">
             <div className="head">
