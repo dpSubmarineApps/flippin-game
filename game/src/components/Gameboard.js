@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Card from "./Card";
-import Player from "./Player";
+import PlayerForm from "./PlayerForm";
+import Leaderboard from "./Leaderboard";
 import song from "../resources/sounds/simpsonsThemeSong.mp3";
 
 //TODO: add to repo, host it somewhere
@@ -14,11 +15,13 @@ class Gameboard extends Component {
         this.matched = [];
         this.clickCount = 0;
         this.player = [];
+        this.leaderboard = <Leaderboard/>;
+        this.worst = 100000000000;
     }
 
     generatePlayer(clickCount) {
         this.setState({
-            player: this.player.push(<Player clicks={clickCount} initials={""}/>)
+            player: this.player.push(<PlayerForm clicks={clickCount} initials={""}/>)
         })
     }
 
@@ -37,14 +40,17 @@ class Gameboard extends Component {
                     this.queue[0].handleClick = null;
                     this.queue = [];
                     this.matched.push(currentCard.props.character);
-                    if (this.matched.length === 1) {
+                    if (this.matched.length === 8) {
                         document.getElementById('themeSong').play();
                         document.getElementById('clickCountTotal').innerText = "WINNER!!! Your click count was: " + this.clickCount + "!";
-                        document.getElementById('leaderboard').innerText = "You don't make it to our list yet";
+                        let leaderboard = document.getElementById('leaderboard');
+                        leaderboard.style.display = "block";
+                        this.worst = (leaderboard.children[0].children[4].textContent.split("****")[0]) * 1;
                         this.generatePlayer(this.clickCount);
+                        // console.log("fifth player" + this.leaderboard);
                         this.sleep(1100, this).then(() => {
                             document.getElementById('status').style.display = "block";
-                            document.getElementById('playerForm').style.display = "block";
+                            // document.getElementById('playerForm').style.display = "block";
                         });
                     }
                 } else {
@@ -83,11 +89,17 @@ class Gameboard extends Component {
         return (
             <div>
                 <div id="status">
-
-                    <div id="player">{this.player}</div>
-                    <div id="playerPlaceholder"></div>
-                    <div id="clickCountTotal"></div>
-                    <div id="leaderboard"></div>
+                    <div id="gameEndContent">
+                        <div id="clickCountTotal"></div>
+                        {
+                            this.clickCount < this.worst ?
+                                <div id="player">{this.player}</div> :
+                                <div></div>
+                        }
+                        <div>
+                            {this.leaderboard}
+                        </div>
+                    </div>
                     <audio id="themeSong">
                         <source src={song} type="audio/mp3"></source>
                     </audio>

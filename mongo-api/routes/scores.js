@@ -24,4 +24,16 @@ router.post('/', [
     }
 });
 
+router.get('/', async (req, res) => {
+   let topScores = [];
+    try {
+       topScores = await Score.find().sort({clicks: 1}).limit(5);
+
+       return res.json({topScores});
+   } catch(err) {
+       console.error(err.message);
+       return res.status(500).send('Server error');
+   }
+});
+
 module.exports = router;

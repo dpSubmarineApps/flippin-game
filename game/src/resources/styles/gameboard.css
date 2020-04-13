@@ -1,4 +1,4 @@
-#gameboard{
+#gameboard {
     column-count: 4;
     height: 1050px;
     margin: auto;
@@ -11,23 +11,60 @@
     z-index: 1;
     position: absolute;
     top: 29%;
-    left: 25%;
+    left: 22.8%;
     height: 15px;
     /*margin: auto;*/
     width: 800px;
     display: none;
-    background: no-repeat  url("../images/simpsons-house.jpg");
+    background: no-repeat url("../images/simpsons-house.jpg");
     padding: 11.3% 0;
-    border-radius: 5%;
+    border-radius: 30px;
 }
 
+#gameEndContent {
+    top: 10%;
+}
 #playerForm {
-    display: none;
+    display: block;
     z-index: 1;
+    position: absolute;
+    left: 39.5%;
+    top: 22%;
 }
 
-#clickCountTotal #leaderboard{
+#clickCountTotal {
     font: xx-large bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #FED90F;
+    /*background: black;*/
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    top: 8%;
+}
+
+.btn {
     color: #FED90F;
     background: black;
+    border: black;
+    border-radius: 30px;
+    margin-top: 5px;
+    height: 20px;
+}
+
+#leaderboard {
+    font: xx-large bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: #FED90F;
+    /*background: black;*/
+    position: absolute;
+    left: 36%;
+    top: 35%;
+    width: 200px;
+    margin: auto;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
 }
