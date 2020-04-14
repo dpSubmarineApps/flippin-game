@@ -55,13 +55,13 @@ class Card extends Component {
 
     render() {
         return (
-            <div class="allCards">
+            <div className="allCards">
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
                     <div id="clickable" onClick={this.handleClick}>
                         <img className="digitalLogo" src={digitalLogo} alt="digital products logo" />
                     </div>
                     <div index={this.props.index} id="clickable" className="characterFace" onClick={this.handleClick}>
-                        <div class="paddingTop">
+                        <div className="paddingTop">
                             {this.findCharacter()}
                         </div>
                     </div>

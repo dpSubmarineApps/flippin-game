@@ -18,17 +18,13 @@ class Leaderboard extends Component {
         this.state.worst = this.state.leaders[4];
     };
 
-    sleep(ms, currentObject) {
-        return new Promise(resolve => setTimeout(resolve, ms, currentObject));
-    }
-
     render() {
         return (
             <div id="leaderboard">
                 <ul>
                     {
                         this.state.leaders.map((item, key) => {
-                            return <Player key={item.initials+item.clicks} clicks={item.clicks} initials={item.initials}/>
+                            return <Player key={key+item.initials+item.clicks} clicks={item.clicks} initials={item.initials}/>
                         })
                     }
                 </ul>

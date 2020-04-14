@@ -45,10 +45,13 @@ class Gameboard extends Component {
                         document.getElementById('clickCountTotal').innerText = "WINNER!!! Your click count was: " + this.clickCount + "!";
                         let leaderboard = document.getElementById('leaderboard');
                         leaderboard.style.display = "block";
-                        if(leaderboard.children[0].length > 0 ){
-                            this.worst = (leaderboard.children[0].children[-1].textContent.split("****")[0]) * 1;
+                        let topFive = leaderboard.children[0].children;
+                        if(topFive.length > 4 ){
+                            this.worst = (topFive[topFive.length-1].textContent.split("****")[0]) * 1;
                         }
-                        this.generatePlayer(this.clickCount);
+                        if(this.clickCount < this.worst){
+                            this.generatePlayer(this.clickCount);
+                        }
                         this.sleep(1100, this).then(() => {
                             document.getElementById('status').style.display = "block";
                         });
@@ -95,11 +98,10 @@ class Gameboard extends Component {
                 <div id="gameboard">
                     <div id="status">
                         <div id="gameEndContent">
-                            <div class="center">
+                            <div className="center">
                                 <div id="clickCountTotal"></div>
                                 <div>{this.clickCount < this.worst ?
-                                    <div id="player">{this.player}</div> :
-                                    <div></div>
+                                    <div id="player">{this.player}</div> : <div></div>
                                 }</div>
                                 <div>
                                     {this.leaderboard}
