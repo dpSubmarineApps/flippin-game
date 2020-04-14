@@ -2,18 +2,26 @@
     background-color: silver;
     border-radius: 30px;
     border: black double;
+    /*height: 200px;*/
+    /*width: 140px;*/
+}
+
+.paddingTop{
+    padding-top: 20%;
 }
 
 .react-card-back {
     background-color: #0080C7;
     border-radius: 30px;
     border: black double;
+    /*height: 200px;*/
+    /*width: 140px;*/
 }
 
 .react-card-flipper {
-    padding: 25px;
-    margin: auto;
-    width: 50%;
+    /*padding: 25px;*/
+    /*margin: auto;*/
+    /*width: 50%;*/
 }
 
 .digitalLogo {
@@ -23,7 +31,7 @@
 }
 
 .characterFace {
-    padding: 14px 0;
+    /*padding-top: 50px;*/
 }
 
 #clickable {

@@ -8,7 +8,8 @@ class Gameboard extends Component {
     constructor(props) {
         super(props);
         this.characters = ["Apu", "Bart", "Homer", "Jeff", "Itchy", "Krusty", "Lisa", "Maggie", "Marge", "MrBurns", "Ned", "Ralph", "Smithers"];
-        this.randomizedCharacters = this.shuffleArray([].concat(this.characters.slice(0, 8), this.characters.slice(0, 8)));
+        this.topEightCharacters = this.shuffleArray(this.characters);
+        this.randomizedCharacters = this.shuffleArray([].concat(this.topEightCharacters.slice(0, 8), this.topEightCharacters.slice(0, 8)));
         this.queue = [];
         this.matched = [];
         this.clickCount = 0;
@@ -91,23 +92,24 @@ class Gameboard extends Component {
     render() {
         return (
             <div>
-                <div id="status">
-                    <div id="gameEndContent">
-                        <div id="clickCountTotal"></div>
-                        {
-                            this.clickCount < this.worst ?
-                                <div id="player">{this.player}</div> :
-                                <div></div>
-                        }
-                        <div>
-                            {this.leaderboard}
-                        </div>
-                    </div>
-                    <audio id="themeSong">
-                        <source src={song} type="audio/mp3"></source>
-                    </audio>
-                </div>
                 <div id="gameboard">
+                    <div id="status">
+                        <div id="gameEndContent">
+                            <div class="center">
+                                <div id="clickCountTotal"></div>
+                                <div>{this.clickCount < this.worst ?
+                                    <div id="player">{this.player}</div> :
+                                    <div></div>
+                                }</div>
+                                <div>
+                                    {this.leaderboard}
+                                </div>
+                            </div>
+                        </div>
+                        <audio id="themeSong">
+                            <source src={song} type="audio/mp3"></source>
+                        </audio>
+                    </div>
                     {this.randomizedCharacters.map((character, id) => {
                         return <Card key={id} id={id} parent={this} character={character}/>
                     })}

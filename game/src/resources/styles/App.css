@@ -1,7 +1,8 @@
 .App {
   text-align: center;
-  /*background: url("./resources/images/simpsons-house.jpg") no-repeat black;*/
-  background-size: 100%;
+}
+
+body{
   background: #FED90F;
 }
 

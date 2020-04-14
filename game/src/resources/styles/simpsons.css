@@ -2767,7 +2767,8 @@
 
 #krusty {
     width: 212px;
-    height: 140px
+    height: 140px;
+    left: -25px;
 }
 
 #krusty .head * {
@@ -4830,7 +4831,8 @@
 
 #marge {
     width: 140px;
-    height: 205px
+    height: 205px;
+    top: -32px;
 }
 
 #marge .head * {
