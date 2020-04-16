@@ -1,11 +1,27 @@
 {
   "scripts": {
-    "start": "npm start --prefix game",
+    "dev": "npm start --prefix game",
     "client": "npm start --prefix game",
     "server": "npm start --prefix mongo-api",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "install": "npm install && npm install --prefix game & npm install --prefix mongo-api"
   },
   "dependencies": {
     "concurrently": "^5.1.0"
-  }
+  },
+  "name": "flippin-game",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-server).",
+  "version": "1.0.0",
+  "main": "/game/src/index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpSubmarineApps/flippin-game.git"
+  },
+  "author": "submarine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dpSubmarineApps/flippin-game/issues"
+  },
+  "homepage": "https://github.com/dpSubmarineApps/flippin-game#readme"
 }
