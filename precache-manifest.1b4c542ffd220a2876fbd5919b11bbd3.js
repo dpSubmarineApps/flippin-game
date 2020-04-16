@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "044914db13022624b01ad4cbafffbc66",
+    "revision": "23250fbe6f0c0ba247f6d5b8114658cf",
     "url": "/flippin-game/index.html"
   },
   {
-    "revision": "435dd69ce5fa59236248",
+    "revision": "e657df97c02620ada99b",
     "url": "/flippin-game/static/css/main.5a4ed946.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/flippin-game/static/js/2.bc426d06.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "435dd69ce5fa59236248",
-    "url": "/flippin-game/static/js/main.38186149.chunk.js"
+    "revision": "e657df97c02620ada99b",
+    "url": "/flippin-game/static/js/main.97bfc0da.chunk.js"
   },
   {
     "revision": "65ba436f0125766125b3",

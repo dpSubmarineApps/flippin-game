@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/flippin-game/precache-manifest.9f7f828c3b987c466bfba3d3cd234798.js"
+  "/flippin-game/precache-manifest.1b4c542ffd220a2876fbd5919b11bbd3.js"
 );
 
 self.addEventListener('message', (event) => {
