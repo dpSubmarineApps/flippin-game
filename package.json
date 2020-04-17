@@ -3,8 +3,7 @@
     "dev": "npm start --prefix game",
     "client": "npm start --prefix game",
     "server": "npm start --prefix mongo-api",
-    "start": "concurrently \"npm run client\" \"npm run server\"",
-    "install": "npm install && npm install --prefix game & npm install --prefix mongo-api"
+    "start": "concurrently \"npm run client\" \"npm run server\""
   },
   "dependencies": {
     "concurrently": "^5.1.0"

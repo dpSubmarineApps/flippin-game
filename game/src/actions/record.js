@@ -8,7 +8,7 @@ export const record = async ( clicks, initials ) => {
     const body = JSON.stringify({clicks, initials});
 
     try {
-        await axios.post('http://localhost:5000/scores', body, config);
+        await axios.post('http://localhost:8181/scores', body, config);
 
     } catch(err) {
         console.error(err.message);
