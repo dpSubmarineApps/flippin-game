@@ -41,6 +41,5 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0"
-  },
-  "proxy": "https://flippin-game.herokuapp.com"
+  }
 }
