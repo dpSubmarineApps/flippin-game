@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "npm start --prefix game",
+    "start": "node server",
     "client": "npm start --prefix game",
     "server": "npm start --prefix mongo-api",
-    "start": "concurrently \"npm run client\" \"npm run server\""
+    "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "dependencies": {
     "acorn": "^7.1.1",
