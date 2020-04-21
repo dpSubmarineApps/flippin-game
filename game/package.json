@@ -42,5 +42,5 @@
   "devDependencies": {
     "gh-pages": "^2.2.0"
   },
-  "proxy": "http://lkjflippin-game.herokuapp.com"
+  "proxy": "https://flippin-game.herokuapp.com"
 }
