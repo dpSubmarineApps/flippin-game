@@ -13,7 +13,7 @@ class Leaderboard extends Component {
     }
 
     getLeaders = async () => {
-        const { data } = await axios.get('http://localhost:8181/scores', this.config);
+        const { data } = await axios.get('http://localhost:' + process.env.PORT + '/scores', this.config);
         this.setState({leaders: data.topScores});
         this.state.worst = this.state.leaders[4];
     };
