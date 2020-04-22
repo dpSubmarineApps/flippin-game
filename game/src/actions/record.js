@@ -8,7 +8,7 @@ export const record = async ( clicks, initials ) => {
     const body = JSON.stringify({clicks, initials});
 
     try {
-        await axios.post('http://localhost:' + process.env.PORT + '/scores', body, config);
+        await axios.post('flippin-game.herokuapp.com/scores', body, config);
 
     } catch(err) {
         console.error(err.message);
