@@ -6,7 +6,7 @@ export const fetchLeaders = async ()  => {
     };
 
     try {
-        return await axios.get('flippin-game.herokuapp.com/scores', config);
+        return await axios.get('/scores', config);
 
     } catch(err) {
         console.error(err.message);

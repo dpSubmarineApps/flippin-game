@@ -13,7 +13,7 @@ class Leaderboard extends Component {
     }
 
     getLeaders = async () => {
-        const { data } = await axios.get('flippin-game.herokuapp.com/scores', this.config);
+        const { data } = await axios.get('/scores', this.config);
         this.setState({leaders: data.topScores});
         this.state.worst = this.state.leaders[4];
     };
