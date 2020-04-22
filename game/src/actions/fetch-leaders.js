@@ -6,7 +6,7 @@ export const fetchLeaders = async ()  => {
     };
 
     try {
-        return await axios.get('http://localhost:443/scores', config);
+        return await axios.get('http://localhost:' + process.env.PORT + '/scores', config);
 
     } catch(err) {
         console.error(err.message);

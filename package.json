@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "start": "node index.js",
-    "client": "npm start --prefix game",
-    "server": "npm start --prefix mongo-api",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
+    "game": "npm start --prefix game",
+    "start": "npm start --prefix mongo-api",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix game && npm run build --prefix game"
   },
   "dependencies": {
     "acorn": "^7.1.1",
@@ -16,7 +16,6 @@
     "express": "~4.16.1",
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
-    "http-proxy-middleware": "^1.0.3",
     "kind-of": "^6.0.3",
     "mongoose": "^5.9.7",
     "morgan": "~1.9.1",
@@ -33,7 +32,7 @@
   "name": "flippin-game",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-server).",
   "version": "1.0.0",
-  "main": "/game/src/index.js",
+  "main": "/mongo-api/server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
@@ -44,5 +43,5 @@
   "bugs": {
     "url": "https://github.com/dpSubmarineApps/flippin-game/issues"
   },
-  "homepage": "https://flippin-game.herokuapp.com"
+  "homepage": "https://github.com/dpSubmarineApps/flippin-game#readme"
 }
