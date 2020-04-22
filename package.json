@@ -2,7 +2,7 @@
   "scripts": {
     "game": "npm start --prefix game",
     "start": "npm start --prefix mongo-api",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "dev": "concurrently \"npm run game\" \"npm run start\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix game && npm run build --prefix game"
   },
   "dependencies": {

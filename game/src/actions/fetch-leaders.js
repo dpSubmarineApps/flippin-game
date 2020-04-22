@@ -5,8 +5,14 @@ export const fetchLeaders = async ()  => {
         headers: { 'Content-Type': 'application/json'}
     };
 
+    let domain = 'http://localhost:8181';
+
+    if(process.env.NODE_ENV === 'production'){
+        domain = ''
+    }
+
     try {
-        return await axios.get('/scores', config);
+        return await axios.get(domain + '/scores', config);
 
     } catch(err) {
         console.error(err.message);

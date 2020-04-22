@@ -12,8 +12,15 @@ class Leaderboard extends Component {
         this.getLeaders();
     }
 
+
     getLeaders = async () => {
-        const { data } = await axios.get('/scores', this.config);
+
+        let domain = 'http://localhost:8181';
+
+        if(process.env.NODE_ENV === 'production'){
+            domain = ''
+        }
+        const { data } = await axios.get(domain + '/scores', this.config);
         this.setState({leaders: data.topScores});
         this.state.worst = this.state.leaders[4];
     };
