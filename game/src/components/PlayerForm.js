@@ -14,21 +14,34 @@ class PlayerForm extends Component {
 
     onSubmit = e => {
         e.preventDefault();
-        document.getElementById("playerForm").style.display="none";
         let initials = document.getElementById("inputInitials").value;
-        record(this.clicks, initials);
+
+        record(this.clicks, initials).then(value => {
+            if(value){
+                document.getElementById("inputInitials").setCustomValidity(value.data);
+                document.getElementById("inputInitials").reportValidity();
+            } else {
+                document.getElementById("playerForm").style.display="none";
+            }
+        });
+
         let gameboard = this.props.parent;
         this.sleep(1000, this).then(() => {
-            gameboard.testingRefs();
+            gameboard.triggerRefs();
         })
     };
+
+    onKeyUp = e => {
+        e.preventDefault();
+        document.getElementById("inputInitials").setCustomValidity("");
+    }
 
     render() {
         return (
             <div>
-                <form id="playerForm" className="playerForm" onSubmit={e => this.onSubmit(e)}>
+                <form id="playerForm" className="playerForm" onKeyUp={e => this.onKeyUp(e)} onSubmit={e => this.onSubmit(e)}>
                     <div className="form-group">
-                        <input id="inputInitials" placeholder="Initials" name="initials" required/>
+                        <input id="inputInitials" placeholder="Initials" name="initials" required />
                     </div>
                     <input type="submit" className="btn btn-primary" value="Join the Hall of Fame"/>
                 </form>

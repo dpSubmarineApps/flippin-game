@@ -68,7 +68,7 @@ class Gameboard extends Component {
         }
     }
 
-    testingRefs() {
+    triggerRefs() {
         this.topFive.current.getLeaders();
     }
 
@@ -92,6 +92,10 @@ class Gameboard extends Component {
         return array;
     }
 
+    replay(){
+        window.location.reload();
+    }
+
     render() {
         return (
             <div>
@@ -105,6 +109,9 @@ class Gameboard extends Component {
                                 }</div>
                                 <div>
                                     {this.leaderboard}
+                                </div>
+                                <div id="replaySection">
+                                    <input id="replayButton" type="submit" value="R E P L A Y" onClick={this.replay}/>
                                 </div>
                             </div>
                         </div>

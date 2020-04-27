@@ -17,7 +17,8 @@ export const record = async ( clicks, initials ) => {
         await axios.post(domain + '/scores', body, config);
 
     } catch(err) {
-        console.error(err.message);
+        console.error(err);
+        return err.response;
     }
 };
 

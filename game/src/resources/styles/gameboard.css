@@ -7,15 +7,15 @@
 }
 
 .react-card-flip{
-    height: 200px;
+    height: 210px;
     width: 140px;
 }
 
 .allCards{
-    height: 200px;
+    height: 210px;
     width: 140px;
     margin: auto;
-    padding: 6%;
+    padding: 11.5%;
 }
 
 #status {
@@ -27,7 +27,7 @@
     background: no-repeat url("../images/simpsons-house.jpg");
     border-radius: 30px;
     margin: 0;
-    top: 44%;
+    top: 50%;
     transform: translateY(-50%);
 }
 
@@ -74,4 +74,17 @@
 ul {
     list-style-type: none;
     padding-left: 0px;
+}
+
+#replayButton{
+    color: black;
+    background: #FED90F;
+    border: black double;
+    border-radius: 30px;
+    margin-top: 5px;
+    height: 30px;
+    width: 75px;
+    right: 73px;
+    position: absolute;
+    bottom: -15px;
 }
