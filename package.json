@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "acorn": "^7.1.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "clean-css": "^4.2.3",
     "concurrently": "^5.1.0",
     "config": "^3.3.1",
